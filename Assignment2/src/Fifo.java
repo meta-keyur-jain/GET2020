@@ -4,13 +4,17 @@ public class Fifo {
 	private static int[][] input_arr;
 	private static Scanner input = new Scanner(System.in);
 
+	// method to take input
 	public int intinput() {
+		int inp_no=0;
 		while (true) {
 			try {
-				return Integer.parseInt(input.next());
+				inp_no = Integer.parseInt(input.next());
+				return inp_no;
 			} catch (Exception ex) {
-				System.out.println("Invalid input.");
+				System.out.println("Invalid input." + ex);
 				System.out.println("Enter again....");
+				return inp_no;
 			}
 		}
 	}
@@ -43,7 +47,7 @@ public class Fifo {
 
 	}
 
-	// completion time
+	// calculation of completion time
 	public int[] completion_time(int[][] sort_arr, int no_of_process) {
 
 		int[] completion_timearr = new int[0];
@@ -69,7 +73,7 @@ public class Fifo {
 		return completion_timearr;
 	}
 
-	// turnaround_time
+	// calculation of turnaround_time
 	public int[] turnaround_time(int[][] sort_arr, int[] completion_timearr,
 			int no_of_process) {
 		int[] turnaround_timearr = new int[0];
@@ -85,7 +89,7 @@ public class Fifo {
 		return turnaround_timearr;
 	}
 
-	// waiting time
+	// calculation of waiting time
 	public int[] waiting_time(int[][] sort_arr, int[] turnaround_timearr,
 			int no_of_process) {
 		int[] waiting_timearr = new int[0];
@@ -103,7 +107,7 @@ public class Fifo {
 		return waiting_timearr;
 	}
 
-	// display
+	// to display the result
 	public void display(int[][] sort_arr, int[] completion_timearr,
 			int[] turnaround_timearr, int[] waiting_timearr, int no_of_process) {
 		try {
