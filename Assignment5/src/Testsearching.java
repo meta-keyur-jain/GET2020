@@ -18,18 +18,17 @@ public class Testsearching {
             assertEquals(expected2,result2);
 
             int result3 = search_obj.binary_search(new int[]{15,18,24,35,67},18);
-            int  expected3 = 2;
+            int  expected3 = 2; 
             assertEquals(expected3,result3);
 
             int result1 = search_obj.binary_search(new int[]{},0);
-            int  expected1 = -1;
-            assertEquals(expected1,result1); 
 
 
+ 
         }
         catch(AssertionError e) {
-            System.out.println("Assertion Error  "+e.getMessage());  
-
+            String expected_res = "array should not be empty"; 
+            assertEquals(expected_res,e.getMessage());
         }
 
         try {
@@ -39,7 +38,7 @@ public class Testsearching {
             assertEquals(expected,result);
 
             int result2 = search_obj.linear_search(new int[]{4,4,5,6,9,10},4);
-            int  expected2 = 1;
+            int  expected2 = 1; 
             assertEquals(expected2,result2);
 
             int result3 = search_obj.linear_search(new int[]{34,18,99,35,67},18);
@@ -55,16 +54,17 @@ public class Testsearching {
             int  expected5 = -1;
             assertEquals(expected5,result5);
 
-            int result1 = search_obj.linear_search(new int[]{},0);
-            int  expected1 = -1;
-            assertEquals(expected1,result1);
+           int result1 = search_obj.linear_search(new int[]{},0);
 
 
 
 
         }
         catch(AssertionError e) {
-            System.out.println("Assertion Error  "+e.getMessage());  
+            
+            String expected_res = "array should not be empty"; 
+            assertEquals(expected_res,e.getMessage());
+            
 
         }
 
