@@ -75,14 +75,12 @@ public class Nqueens {
      */
     
     public int[][] solve_nq(int size){
-        if (size<=3) {
-            throw new AssertionError("  Size should be valid!!");
-        }
+        
 
         int[][] board = new int[size][size];
 
         if (!theBoardSolver(board, 0,size)) {
-            System.out.println("Solution not found.");
+            System.out.println("Size should be valid!!");
         } 
 
         return board; 
