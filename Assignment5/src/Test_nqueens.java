@@ -25,6 +25,21 @@ public class Test_nqueens {
             assertArrayEquals(expected1,result1);
 
             int [][] result2 = nqueens_obj.solve_nq(3);
+            int [][]expected2 =  {{0, 0, 0},
+                                  {0, 0, 0},
+                                  {0, 0, 0}};
+            assertArrayEquals(expected2,result2);
+            
+            int [][] result3 = nqueens_obj.solve_nq(2);
+            int [][]expected3 =  {{0, 0},
+                                  {0, 0}};
+            assertArrayEquals(expected3,result3);
+            
+            int [][] result4 = nqueens_obj.solve_nq(1);
+            int [][]expected4 =  {{0}};
+            assertArrayEquals(expected4,result4);
+            
+            
 
             int [][] result3 = nqueens_obj.solve_nq(0);
 
@@ -32,7 +47,8 @@ public class Test_nqueens {
 
 
         } catch (AssertionError e) {
-            System.out.println("Assertion Error"+e.getMessage());  
+            String expected_res = "Size should be valid!!"; 
+            assertEquals(expected_res,e.getMessage());    
 
         }
 
