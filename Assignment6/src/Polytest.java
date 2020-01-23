@@ -7,7 +7,7 @@ import org.junit.Test;
 
 
 public class Polytest {
-    Poly p1;
+    Poly  p1;
     Poly p2;
     Poly p3;
     Poly p4;
