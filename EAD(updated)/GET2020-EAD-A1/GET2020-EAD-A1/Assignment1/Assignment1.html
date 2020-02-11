@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Parking System</title>
+    <link rel="stylesheet" type="text/css" href="Assignment.css">
+    <script>
+        var vechileType,priceDaily,priceMonthly,priceYearly;
+        var price,passDaily,passMonthly,passYearly,res;
+        
+
+    function suscessfulRegestration(){
+        
+        var name = document.getElementById("name").value;
+        var password = document.getElementById("pass").value;
+        var conpass  = document.getElementById("confPass").value;
+        var gender  = document.getElementById("gender").value;
+        var mobNo  = document.getElementById("mobNo").value;
+        
+
+        if(isNaN(name) && isNaN(password) && isNaN(conpass) && isNaN(gender)){
+
+          document.getElementById('basicInformation').innerHTML = "<h1>Hey " + name + " ! you are registered now and your id is "+ Math.floor(Math.random()*100)+"</h1>";
+        
+        }
+        else
+        {
+           
+            document.getElementById('msg').innerHTML = "<spam> please fill all the field </span>";
+
+        }
+        document.getElementById("basicInformation").style.display="none";
+       document.getElementById("vechileDetails").style.display = "block";
+
+    }
+
+    
+
+
+    
+    function vechileRegestration(){
+        var e = document.getElementById("typeSelect");
+        vechileType = e.options[e.selectedIndex].value;
+        if(vechileType=="cycle"){
+            priceDaily=5;priceMonthly=100;priceYearly=500;
+
+        document.getElementById("vechileDetails").style.display="none";
+       document.getElementById("passCycle").style.display = "block";
+       document.getElementById("passMotorCycle").style.display="none";
+       document.getElementById("vechileDetails").style.display="none";
+       document.getElementById("passFourWheeler").style.display = "none";
+
+
+
+       
+        }
+        else if(vechileType=="motorCycle"){
+            priceDaily=10;priceMonthly=200;priceYearly=1000;
+
+            document.getElementById("vechileDetails").style.display="none";
+       document.getElementById("passMotorCycle").style.display = "block";
+       document.getElementById("passCycle").style.display = "none";
+       document.getElementById("passFourWheeler").style.display = "none";
+
+
+        }
+        else if(vechileType=="fourWheelers"){
+            priceDaily=20;priceMonthly=500;priceYearly=3500;
+            document.getElementById("vechileDetails").style.display="none";
+       document.getElementById("passFourWheeler").style.display = "block";
+       document.getElementById("passCycle").style.display = "none";
+       document.getElementById("passMotorCycle").style.display="none";
+
+
+        }
+        
+    }
+    function cyclePassDay(){
+        //res = res.substring(0,str.length-1);
+    	           document.getElementById("reciept").innerHTML = "You have charged- "+res.slice(0,-1).toUpperCase()+passDaily;
+           document.getElementById("converter").innerHTML.display = block;
+           document.getElementById("passFourWheeler").style.display = "none";
+       document.getElementById("passCycle").style.display = "none";
+       document.getElementById("passMotorCycle").style.display="none";
+
+        }
+
+        function cyclePassMonth(){
+            //res = res.substring(0,str.length-1);
+            document.getElementById("reciept").innerHTML = "You have charged -"+res.slice(0,-1).toUpperCase()+passMonthly;
+           document.getElementById("converter").innerHTML.display = block;
+           document.getElementById("passFourWheeler").style.display = "none";
+       document.getElementById("passCycle").style.display = "none";
+       document.getElementById("passMotorCycle").style.display="none";
+        }
+           function cyclePassYear(){
+            //res = res.substring(0,str.length-1);
+            document.getElementById("reciept").innerHTML = "You have charged- "+res.slice(0,-1).toUpperCase()+passYearly;
+           document.getElementById("converter").innerHTML.display = block;
+           document.getElementById("passFourWheeler").style.display = "none";
+       document.getElementById("passCycle").style.display = "none";
+       document.getElementById("passMotorCycle").style.display="none";
+        }
+        
+        
+
+
+        function converter(){
+             res = document.getElementById("selectConverter").value;
+            if(res == "usd0"){
+                passDaily = (priceDaily*0.014).toFixed(2);
+                document.getElementById("daypricecycle").innerHTML = "$"+(priceDaily*0.014).toFixed(2);
+                passMonthly = (priceMonthly*0.014).toFixed(2);
+                document.getElementById("monthpricecycle").innerHTML = "$"+(priceMonthly*0.014).toFixed(2);
+                passYearly = (priceYearly*0.014).toFixed(2);
+                document.getElementById("yearpricecycle").innerHTML = "$"+(priceYearly*0.014).toFixed(2);
+            }
+            else if(res == "yen0"){
+                passDaily = (priceDaily*1.52).toFixed(2);
+                document.getElementById("daypricecycle").innerHTML = "YEN "+(priceDaily*1.52).toFixed(2);
+                passMonthly = (priceMonthly*1.52).toFixed(2);
+                document.getElementById("monthpricecycle").innerHTML = "YEN "+(priceMonthly*1.52).toFixed(2);
+                passYearly = (priceYearly*1.52).toFixed(2);
+                document.getElementById("yearpricecycle").innerHTML = "YEN "+(priceYearly*1.52).toFixed(2);
+            }
+            else if(res == "inr0"){
+                passDaily = (priceDaily).toFixed(2);
+                document.getElementById("daypricecycle").innerHTML = "INR "+(priceDaily).toFixed(2);
+                passMonthly = (priceMonthly).toFixed(2);
+                document.getElementById("monthpricecycle").innerHTML = "INR "+(priceMonthly).toFixed(2);
+                passYearly = (priceYearly).toFixed(2);
+                document.getElementById("yearpricecycle").innerHTML = "INR "+(priceYearly).toFixed(2);
+            }
+        }
+        function converter1(){
+             res = document.getElementById("selectConverter1").value;
+            if(res == "usd1"){
+                passDaily = (priceDaily*0.014).toFixed(2);
+                document.getElementById("daypricecycle1").innerHTML = "$"+(priceDaily*0.014).toFixed(2);
+                passMonthly = (priceMonthly*0.014).toFixed(2);
+                document.getElementById("monthpricecycle1").innerHTML = "$"+(priceMonthly*0.014).toFixed(2);
+                passYearly = (priceYearly*0.014).toFixed(2);
+                document.getElementById("yearpricecycle1").innerHTML = "$"+(priceYearly*0.014).toFixed(2);
+            }
+            else if(res == "yen1"){
+                passDaily = (priceDaily*1.52).toFixed(2);
+                document.getElementById("daypricecycle1").innerHTML = "YEN "+(priceDaily*1.52).toFixed(2);
+                passMonthly = (priceMonthly*1.52).toFixed(2);
+                document.getElementById("monthpricecycle1").innerHTML = "YEN "+(priceMonthly*1.52).toFixed(2);
+                passYearly = (priceYearly*1.52).toFixed(2);
+                document.getElementById("yearpricecycle1").innerHTML = "YEN "+(priceYearly*1.52).toFixed(2);
+            }
+            else if(res == "inr1"){
+                passDaily = (priceDaily).toFixed(2);
+                document.getElementById("daypricecycle1").innerHTML = "INR "+(priceDaily).toFixed(2);
+                passMonthly = (priceMonthly).toFixed(2);
+                document.getElementById("monthpricecycle1").innerHTML = "INR "+(priceMonthly).toFixed(2);
+                passYearly = (priceYearly).toFixed(2);
+                document.getElementById("yearpricecycle1").innerHTML = "INR "+(priceYearly).toFixed(2);
+            }
+        }
+        function converter2(){
+             res = document.getElementById("selectConverter2").value;
+            if(res == "usd2"){
+                passDaily = (priceDaily*0.014).toFixed(2);
+                document.getElementById("daypricecycle2").innerHTML = "$"+(priceDaily*0.014).toFixed(2);
+                passMonthly = (priceMonthly*0.014).toFixed(2);
+                document.getElementById("monthpricecycle2").innerHTML = "$"+(priceMonthly*0.014).toFixed(2);
+                passYearly = (priceYearly*0.014).toFixed(2);
+                document.getElementById("yearpricecycle2").innerHTML = "$"+(priceYearly*0.014).toFixed(2);
+            }
+            else if(res == "yen2"){
+                passDaily = (priceDaily*1.52).toFixed(2);
+                document.getElementById("daypricecycle2").innerHTML = "YEN "+(priceDaily*1.52).toFixed(2);
+                passMonthly = (priceMonthly*1.52).toFixed(2);
+                document.getElementById("monthpricecycle2").innerHTML = "YEN "+(priceMonthly*1.52).toFixed(2);
+                passYearly = (priceYearly*1.52).toFixed(2);
+                document.getElementById("yearpricecycle2").innerHTML = "YEN "+(priceYearly*1.52).toFixed(2);
+            }
+            else if(res == "inr2"){
+                passDaily = (priceDaily).toFixed(2);
+                document.getElementById("daypricecycle2").innerHTML = "INR "+(priceDaily).toFixed(2);
+                passMonthly = (priceMonthly).toFixed(2);
+                document.getElementById("monthpricecycle2").innerHTML = "INR "+(priceMonthly).toFixed(2);
+                passYearly = (priceYearly).toFixed(2);
+                document.getElementById("yearpricecycle2").innerHTML = "INR "+(priceYearly).toFixed(2);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Metacube Parking System</h1>
+    <div>
+
+    <form id = 'basicInformation'>
+        <fieldset>
+            <legend>Personal Details</legend>
+        <span id="msg"></span><br>
+        <label>Full Name<input type="text" id="name" placeholder="Enter Name"  required><br/></label>
+        <label>Gender <label><input type="radio" id = "gender" value="gender" name="gender" required>Male</label><label><input type="radio" value="gender" name="gender" required>female</label></label><br/>
+        <label>E-Mail<input type="email" id = "email" placeholder="abc@gmail.com" required></label><br/>
+        <label>Password<input type="password" id = "pass" required ></label><br/>
+        <label>Confirm Password<input type="password" id = "confPass" required></label><br/>
+        <label>Contact Number<input type="tel" id = "mobNo"  pattern = "[0-9]{10}" maxlength="10" minlength="10" required></label><br/>
+        <input type="button" value="Go" onclick="suscessfulRegestration()">
+    </fieldset>
+    </form>
+</div>
+<br>
+    <div>
+        <form id = 'vechileDetails'>
+            <fieldset>
+                <legend>Vehicle Details</legend>
+            <label>Vehicle Name<input type="text" id="vehicalName" placeholder="Vehicle Name Eg - Baleno"  required><br/></label>
+            <label>Type <label><select id="typeSelect">
+                <option value="type" style = "color:rgb(134, 134, 134);" selected disabled>Type</option>
+                <option value="cycle">Cycle</option>
+                <option value="motorCycle">Motor Cycle</option>
+                <option value="fourWheelers">Four Wheeler</option>
+              </select><br/>
+            <label>Vehicle Number<input type="text" id = "vechileNumber" placeholder="RJ14-SA-1234" required></label><br/>
+            <label>Employee Id<input type="text" id = "employeeId" required ></label><br/>
+            <label>Identification</label><br><textarea rows="4" cols="50" placeholder="Enter the Description of vehicle">
+                </textarea>
+            <input type="button" value="Go" onclick="vechileRegestration()">
+        </fieldset>
+        </form>
+    
+        </div>
+
+        <div>
+
+            <form id = 'selectPrice'>
+                <div id = "passCycle">
+                <fieldset>
+                    <legend>Select Pass Price</legend>
+                    <h1>Cycle</h1>
+                    <select id="selectConverter" onchange="converter()">
+                        <option value="type" style = "color:rgb(134, 134, 134);" selected disabled>Currency</option>
+                        <option value="usd0">USD</option>
+                        <option value="yen0">YEN</option>
+                        <option value="inr0">INR</option>
+                    </select>
+                    <div class="flex-container">
+                       
+                    <div class="card">
+                       
+                        <h2 class="passhead">1 Day</h2>
+                        <p id="daypricecycle">Rs.5</p>
+                        
+                        <p><input type = "button" class="cardButton"  value= "Make Pass" onClick="cyclePassDay()" ></p>
+                      </div>
+                    <div class="card">
+                        
+                        <h2 class="passhead">1 Month</h2>
+                        <p id="monthpricecycle">Rs.100</p>
+                        
+                        <p><input  type = "button"  class="cardButton"  value= "Make Pass"  onClick="cyclePassMonth()" ></p>
+                      </div>
+                    <div class="card">
+                        
+                        <h2 class="passhead">1 Year</h2>
+                        <p id = "yearpricecycle">Rs.500</p>
+                        
+                        <p><input  type = "button"  class="cardButton"  value= "Make Pass" onClick="cyclePassYear()" ></p>
+                      </div>
+                    </div>
+            </fieldset>
+        </div>
+
+
+
+    <div id = "passMotorCycle">
+        <fieldset>
+            <legend>Select Pass Price</legend>
+            <h1>Motor Cycle</h1>
+            <select id="selectConverter1" onchange="converter1()">
+                <option value="type" style = "color:rgb(134, 134, 134);" selected disabled>Currency</option>
+                <option value="usd1">USD</option>
+                <option value="yen1">YEN</option>
+                <option value="inr1">INR</option>
+            </select>
+            <div class="flex-container">
+               
+            <div class="card">
+               
+                <h2 class="passhead">1 Day</h2>
+                <p id="daypricecycle1">Rs.10</p>
+                
+                <p><input type = "button" class="cardButton"  value= "Make Pass" onClick="cyclePassDay()" ></p>
+              </div>
+            <div class="card">
+                
+                <h2 class="passhead">1 Month</h2>
+                <p id="monthpricecycle1">Rs.200</p>
+                
+                <p><input  type = "button"  class="cardButton"  value= "Make Pass"  onClick="cyclePassMonth()" ></p>
+              </div>
+            <div class="card">
+                
+                <h2 class="passhead">1 Year</h2>
+                <p id="yearpricecycle1">Rs.1000</p>
+                
+                <p><input  type = "button"  class="cardButton"  value= "Make Pass" onClick="cyclePassYear()" ></p>
+              </div>
+            </div>
+    </fieldset>
+</div>
+
+
+
+<div id = "passFourWheeler">
+    <fieldset>
+        <legend>Select Pass Price</legend>
+        <h1>Four Wheeler</h1>
+        <select id="selectConverter2" onchange="converter2()">
+            <option value="type" style = "color:rgb(134, 134, 134);" selected disabled>Currency</option>
+            <option value="usd2">USD</option>
+            <option value="yen2">YEN</option>
+            <option value="inr2">INR</option>
+        </select>
+        <div class="flex-container">
+           
+        <div class="card">
+           
+            <h2 class="passhead">1 Day</h2>
+            <p id="daypricecycle2">Rs.20</p>
+            
+            <p><input type = "button" class="cardButton"  value= "Make Pass" onClick="cyclePassDay()" ></p>
+          </div>
+        <div class="card">
+            
+            <h2 class="passhead">1 Month</h2>
+            <p id="monthpricecycle2">Rs.500</p>
+            
+            <p><input  type = "button"  class="cardButton"  value= "Make Pass"  onClick="cyclePassMonth()" ></p>
+          </div>
+        <div class="card">
+            
+            <h2 class="passhead">1 Year</h2>
+            <p id="monthpricecycle2">Rs.3500</p>
+            
+            <p><input  type = "button"  class="cardButton"  value= "Make Pass" onClick="cyclePassYear()" ></p>
+          </div>
+        </div>
+</fieldset>
+</div>
+</form>
+</div>
+<div>
+<h1 id="reciept"></h1>
+</div>            
+</body>
+</html>
