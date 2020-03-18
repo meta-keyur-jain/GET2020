@@ -31,7 +31,7 @@ linklist = function() {
     this.delete = function(data) {
         let current = this.head;
         while (current) {
-            if (current.data === item) {
+            if (current.data === data) {
                 if (current == this.head && current == this.tail) {
                     this.head = null;
                     this.tail = null;
@@ -39,11 +39,11 @@ linklist = function() {
                 } else if (current == this.head) {
                     this.head = this.head.next
                     this.head.prev = null
-                    size--;
+                    this.size--;
                 } else if (current == this.tail) {
                     this.tail = this.tail.prev;
                     this.tail.next = null;
-                    size--;
+                    this.size--;
                 } else {
                     current.prev.next = current.next;
                     current.next.prev = current.prev;
