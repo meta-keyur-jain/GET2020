@@ -1,0 +1,58 @@
+<!-- <form class="form" (ngSubmit)="onSubmit()">
+    <input type="text" name="title" [(ngModel)]="title" placeholder="Add todo...."><br>
+    <textarea name="description" [(ngModel)]="description"></textarea>
+    <input type="submit" value="submit" class="btn">
+</form> -->
+
+<div class="modal fade" id="formModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">New Task</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Title</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" name="title" [(ngModel)]="title" placeholder="Add todo....">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Description</label>
+                        <textarea type="text" class="form-control" name="description" [(ngModel)]="description" id="formGroupExampleInput2" placeholder="Description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="formGroupExampleInput3">Creation Date</label>
+                        <div>
+                            <input type="date" id="dateField1">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput3">Completion Date</label>
+                        <div>
+                            <input type="date" id="dateField2">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput3">Priority</label>
+                        <select class="form-control" id="inputGroupSelect01" name="priority" [(ngModel)]="priority">
+                                <option selected>Choose...</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button routerLink="" class="btn btn-primary" type="submit" value="submit">Add Task</button>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+.del {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 9px;
+    border-radius: 50%;
+    cursor: pointer;
+    float: right;
+}
+
+.todo {
+    background: #f4f4f4;
+    padding: 10px;
+    border-bottom: 1px #ccc dotted;
+}
+
+.textArea {
+    border-radius: 10px;
+    width: 500px;
+}
+
+.is-complete {
+    text-decoration: line-through;
+}
+
+.para-1 {
+    background-color: rgb(255, 179, 179);
+    color: black;
+}
+
+.para {
+    background-color: rgb(176, 231, 205);
+    color: black;
+}
+
+.para-2 {
+    background-color: rgb(230, 229, 195);
+    color: black;
+}

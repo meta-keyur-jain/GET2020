@@ -1,0 +1,32 @@
+<div>
+    <div style="display: flex; justify-content: space-around;" class="m-3">
+
+        <div *ngIf="(todo.priority === 'low')">
+            <div [ngClass]="setClasses()">
+                <p>
+                    <input (change)="onToggle(todo)" type="checkbox" /> {{todo.title}}<br>
+                    <textarea class="textArea">{{todo.description}}</textarea>
+                    <button (click)="onDelete(todo)" class="del">X</button>
+                </p>
+            </div>
+        </div>
+        <div *ngIf="(todo.priority === 'high')">
+            <div [ngClass]="setClasses()">
+                <p>
+                    <input (change)="onToggle(todo)" type="checkbox" /> {{todo.title}}<br>
+                    <textarea class="textArea">{{todo.description}}</textarea>
+                    <button (click)="onDelete(todo)" class="del">X</button>
+                </p>
+            </div>
+        </div>
+        <div *ngIf="(todo.priority === 'medium')">
+            <div [ngClass]="setClasses()">
+                <p>
+                    <input (change)="onToggle(todo)" type="checkbox" /> {{todo.title}}<br>
+                    <textarea class="textArea">{{todo.description}}</textarea>
+                    <button (click)="onDelete(todo)" class="del">X</button>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+<app-add-todo (addTodo)="addTodo($event)">
+</app-add-todo>
+<h3>New Task</h3>
+<div *ngFor="let todo of todos">
+    <div *ngIf="todo.status==='new'">
+
+        <app-todo-item [todo]="todo" (deleteTodo)="deleteTodo($event)">
+            <!-- <li>{{todo.title}}</li> -->
+            <!-- <app-todo-item></app-todo-item> -->
+        </app-todo-item>
+    </div>
+</div>
+<h3>In progress Task</h3>
+<div *ngFor="let todo of todos">
+    <div *ngIf="todo.status==='inprogress'">
+
+        <app-todo-item [todo]="todo" (deleteTodo)="deleteTodo($event)">
+            <!-- <li>{{todo.title}}</li> -->
+            <!-- <app-todo-item></app-todo-item> -->
+        </app-todo-item>
+    </div>
+</div>
+<h3>Completed Task</h3>
+<div *ngFor="let todo of todos">
+    <div *ngIf="todo.status==='complete'">
+
+        <app-todo-item [todo]="todo" (deleteTodo)="deleteTodo($event)">
+            <!-- <li>{{todo.title}}</li> -->
+            <!-- <app-todo-item></app-todo-item> -->
+        </app-todo-item>
+    </div>
+</div>
