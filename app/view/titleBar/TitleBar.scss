@@ -1,0 +1,63 @@
+.iconButton {
+    background: transparent;
+    border: none;
+}
+
+.addIcon:before {
+    color: #dad3d3f8;
+}
+
+.logoutButton {
+    background: transparent;
+    border: none;
+    color: white;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+#ext-element-32 {
+    color: white;
+}
+
+.x-button .x-button-icon {
+    color: white;
+}
+
+@media only screen and (max-width: 400px) {
+    #ext-button-1 {
+        font-size: 10px;
+    }
+    .x-innerhtml {
+        font-size: 20px;
+    }
+    .x-button-label {
+        font-size: 15px;
+    }
+    #ext-element-99 {
+        height: 35px;
+    }
+    #ext-element-142 {
+        height: 35px;
+    }
+    #ext-element-175 {
+        height: 35px;
+    }
+    #ext-element-141 {
+        height: 35px;
+    }
+    #ext-element-174 {
+        height: 35px;
+    }
+    #ext-tab-1 {
+        height: 25px;
+    }
+    #ext-tab-2 {
+        height: 25px;
+    }
+    #ext-tab-3 {
+        height: 25px;
+    }
+    .x-title-el {
+        font-size: 15px;
+    }
+}

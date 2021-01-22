@@ -1,0 +1,62 @@
+.employee {
+    margin: 10px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.imageDiv {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.onImage {
+    border-radius: 25px;
+    height: 40px;
+}
+
+.textDiv {
+    margin: 10px;
+    flex: 10;
+}
+
+.paraEmpName {
+    font-weight: bold;
+}
+
+.paraEmail {
+    word-break: break-all;
+}
+
+.selectWork .x-layout-box.x-pack-start {
+    display: flex;
+    justify-content: space-around;
+}
+
+.searchbar {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.sortList {
+    flex: 1;
+}
+
+@media only screen and (max-width: 400px) {
+    .searchbar {
+        margin-right: 0;
+    }
+    #ext-textinput-1 {
+        width: 200px;
+    }
+    #ext-element-59 {
+        width: 100px;
+    }
+    #ext-element-80 {
+        font-size: 15px;
+    }
+}

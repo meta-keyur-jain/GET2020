@@ -1,0 +1,12 @@
+.closeButton {
+    background-color: transparent;
+    color: white;
+    background-origin: 50px;
+    border-color: transparent;
+}
+
+@media only screen and (max-width: 400px) {
+    #ext-button-10 {
+        font-size: 10px;
+    }
+}
